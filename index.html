@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>축전지 연간점검 데이터 저장</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    h4 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    input[type="number"] {
+      padding: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn-container button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 14px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    // 데이터를 저장할 배열
+    var data = [];
+
+    // 열 이름과 데이터를 입력받는 함수
+    function saveData() {
+      var table = document.getElementById('data-table');
+
+      // 1열에 열 이름을 표시하고 2열에 데이터 입력 필드를 생성합니다.
+      var row = table.insertRow(-1);
+      var headerCell = row.insertCell(0);
+      headerCell.innerHTML = '축전지 ALL 충전전압_전송용_방전 전';
+      var dataCell = row.insertCell(1);
+      var inputElement = document.createElement('input');
+      inputElement.type = 'number';
+      inputElement.placeholder = '축전지 ALL 충전전압_전송용_방전 전';
+      dataCell.appendChild(inputElement);
+
+      for (var i = 1; i <= 4; i++) {
+        var row = table.insertRow(-1);
+
+        // 1열에 열 이름을 표시합니다.
+        var headerCell = row.insertCell(0);
+        headerCell.innerHTML = '축전지 ' + i + '번 충전전압_전송용_방전 전';
+
+        // 2열에 데이터 입력 필드를 생성합니다.
+        var dataCell = row.insertCell(1);
+        var inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.placeholder = '축전지 ' + i + '번 충전전압_전송용_방전 전';
+        dataCell.appendChild(inputElement);
+      }
+      var row = table.insertRow(-1);
+      var headerCell = row.insertCell(0);
+      headerCell.innerHTML = '축전지 ALL 충전전압_전송용_방전 후';
+      var dataCell = row.insertCell(1);
+      var inputElement = document.createElement('input');
+      inputElement.type = 'number';
+      inputElement.placeholder = '축전지 ALL 충전전압_전송용_방전 후';
+      dataCell.appendChild(inputElement);
+      for (var i = 1; i <= 4; i++) {
+        var row = table.insertRow(-1);
+
+        // 1열에 열 이름을 표시합니다.
+        var headerCell = row.insertCell(0);
+        headerCell.innerHTML = '축전지 ' + i + '번 충전전압_전송용_방전 후';
+
+        // 2열에 데이터 입력 필드를 생성합니다.
+        var dataCell = row.insertCell(1);
+        var inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.placeholder = '축전지 ' + i + '번 충전전압_전송용_방전 후';
+        dataCell.appendChild(inputElement);
+      }
+      var row = table.insertRow(-1);
+      var headerCell = row.insertCell(0);
+      headerCell.innerHTML = '축전지 ALL 충전전압-1_방전 전';
+      var dataCell = row.insertCell(1);
+      var inputElement = document.createElement('input');
+      inputElement.type = 'number';
+      inputElement.placeholder = '축전지 ALL 충전전압-1_방전 전';
+      dataCell.appendChild(inputElement);
+
+      for (var i = 1; i <= 24; i++) {
+        var row = table.insertRow(-1);
+
+        // 1열에 열 이름을 표시합니다.
+        var headerCell = row.insertCell(0);
+        headerCell.innerHTML = '축전지 ' + i + '번 충전전압-1_방전 전';
+
+        // 2열에 데이터 입력 필드를 생성합니다.
+        var dataCell = row.insertCell(1);
+        var inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.placeholder = '축전지 ' + i + '번 충전전압-1_방전 전';
+        dataCell.appendChild(inputElement);
+      }
+      var row = table.insertRow(-1);
+      var headerCell = row.insertCell(0);
+      headerCell.innerHTML = '축전지 ALL 충전전압-2_방전 전';
+      var dataCell = row.insertCell(1);
+      var inputElement = document.createElement('input');
+      inputElement.type = 'number';
+      inputElement.placeholder = '축전지 ALL 충전전압-2_방전 전';
+      dataCell.appendChild(inputElement);
+      for (var i = 1; i <= 24; i++) {
+        var row = table.insertRow(-1);
+
+        // 1열에 열 이름을 표시합니다.
+        var headerCell = row.insertCell(0);
+        headerCell.innerHTML = '축전지 ' + i + '번 충전전압-2_방전 전';
+
+        // 2열에 데이터 입력 필드를 생성합니다.
+        var dataCell = row.insertCell(1);
+        var inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.placeholder = '축전지 ' + i + '번 충전전압-2_방전 전';
+        dataCell.appendChild(inputElement);
+      }
+      var row = table.insertRow(-1);
+      var headerCell = row.insertCell(0);
+      headerCell.innerHTML = '축전지 ALL 충전전압-1_방전 후';
+      var dataCell = row.insertCell(1);
+      var inputElement = document.createElement('input');
+      inputElement.type = 'number';
+      inputElement.placeholder = '축전지 ALL 충전전압-1_방전 후';
+      dataCell.appendChild(inputElement);
+      for (var i = 1; i <= 24; i++) {
+        var row = table.insertRow(-1);
+
+        // 1열에 열 이름을 표시합니다.
+        var headerCell = row.insertCell(0);
+        headerCell.innerHTML = '축전지 ' + i + '번 충전전압-1_방전 후';
+
+        // 2열에 데이터 입력 필드를 생성합니다.
+        var dataCell = row.insertCell(1);
+        var inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.placeholder = '축전지 ' + i + '번 충전전압-1_방전 후';
+        dataCell.appendChild(inputElement);
+      }
+      var row = table.insertRow(-1);
+      var headerCell = row.insertCell(0);
+      headerCell.innerHTML = '축전지 ALL 충전전압-2_방전 후';
+      var dataCell = row.insertCell(1);
+      var inputElement = document.createElement('input');
+      inputElement.type = 'number';
+      inputElement.placeholder = '축전지 ALL 충전전압-2_방전 후';
+      dataCell.appendChild(inputElement);
+      for (var i = 1; i <= 24; i++) {
+        var row = table.insertRow(-1);
+
+        // 1열에 열 이름을 표시합니다.
+        var headerCell = row.insertCell(0);
+        headerCell.innerHTML = '축전지 ' + i + '번 충전전압-2_방전 후';
+
+        // 2열에 데이터 입력 필드를 생성합니다.
+        var dataCell = row.insertCell(1);
+        var inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.placeholder = '축전지 ' + i + '번 충전전압-2_방전 후';
+        dataCell.appendChild(inputElement);
+      }
+    }
+
+    // 데이터를 저장하는 함수
+    function storeData() {
+      var table = document.getElementById('data-table');
+      var dataRow = [];
+
+      // 1열의 열 이름은 건너뛰고, 2열부터 데이터를 가져옵니다.
+      for (var i = 0; i < table.rows.length; i++) {
+        var inputElement = table.rows[i].cells[1].querySelector('input');
+        if (inputElement) {
+          var value = inputElement.value;
+          dataRow.push(value);
+        }
+      }
+
+      // 전체 데이터 배열에 데이터 행을 추가합니다.
+      data = [dataRow];
+    }
+
+    // 표를 CSV 파일로 저장하는 함수
+    function saveDataAsCSV() {
+      var csvContent = "data:text/csv;charset=utf-8,";
+
+      // 열 이름을 CSV 형식으로 변환하여 추가합니다.
+      var headerRow = [];
+      headerRow.push("축전지 ALL 충전전압_전송용_방전 전");
+      for (var i = 1; i <= 4; i++) {
+        headerRow.push("축전지 " + i + "번 충전전압_전송용_방전 전");
+      }
+      headerRow.push("축전지 ALL 충전전압_전송용_방전 후");
+      for (var i = 1; i <= 4; i++) {
+        headerRow.push("축전지 " + i + "번 충전전압_전송용_방전 후");
+      }
+
+      headerRow.push("축전지 ALL 충전전압-1_방전 전");
+      for (var i = 1; i <= 24; i++) {
+        headerRow.push("축전지 " + i + "번 충전전압-1_방전 전");
+      }
+      headerRow.push("축전지 ALL 충전전압-2_방전 전");
+      for (var i = 1; i <= 24; i++) {
+        headerRow.push("축전지 " + i + "번 충전전압-2_방전 전");
+      }
+
+      headerRow.push("축전지 ALL 충전전압-1_방전 후");
+      for (var i = 1; i <= 24; i++) {
+        headerRow.push("축전지 " + i + "번 충전전압-1_방전 후");
+      }
+      headerRow.push("축전지 ALL 충전전압-2_방전 후");
+      for (var i = 1; i <= 24; i++) {
+        headerRow.push("축전지 " + i + "번 충전전압-2_방전 후");
+      }
+      csvContent += "\ufeff" + headerRow.join(",") + "\r\n";
+
+      // 데이터를 CSV 형식으로 변환하여 추가합니다.
+      for (var i = 0; i < data.length; i++) {
+        csvContent += data[i].join(",") + "\r\n";
+      }
+
+      // CSV 파일 다운로드
+      var encodedUri = encodeURI(csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "data.csv");
+      document.body.appendChild(link);
+      link.click();
+    }
+
+    // 초기화 함수
+    function initialize() {
+      saveData();
+    }
+
+    // 페이지 로드 시 초기화 함수 실행
+    window.onload = function() {
+      initialize();
+      saveData(); // saveData() 함수를 호출하여 표를 생성합니다.
+    };
+  </script>
+</head>
+<body>
+  <h1>축전지 연간점검 데이터 저장</h1>
+  <h4>표 오른쪽 열에 수치를 입력하고, 아래 '저장' 버튼을 누른 후 'CSV로 저장' 버튼을 눌러주세요</h4>
+  <table id="data-table"></table>
+  <div class="btn-container">
+    <button onclick="storeData()">저장</button>
+    <button onclick="saveDataAsCSV()">CSV로 저장</button>
+  </div>
+</body>
+</html>
